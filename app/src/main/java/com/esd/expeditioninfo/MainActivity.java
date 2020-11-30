@@ -30,15 +30,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         );
-
         ButterKnife.bind(this);
         initView();
     }
 
     private void initView() {
-        loadFragment(new PostageFragment());
+        loadFragment(new TrackingFragment());
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-
     }
 
     @Override
@@ -53,11 +51,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         Fragment fragment = null;
         switch (menuItem.getItemId()) {
-            case R.id.menuPostage:
-                fragment = new PostageFragment();
-                break;
             case R.id.menuTracking:
                 fragment = new TrackingFragment();
+                break;
+            case R.id.menuPostage:
+                fragment = new PostageFragment();
                 break;
         }
         return loadFragment(fragment);
