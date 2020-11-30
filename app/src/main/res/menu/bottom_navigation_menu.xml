@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/search"
-        android:icon="@drawable/ic_search_24px"
-        android:title="Search" />
+        android:id="@+id/menuPostage"
+        android:icon="@drawable/ic_baseline_find_replace_24"
+        android:title="@string/label_postage" />
 
     <item
-        android:id="@+id/comment"
-        android:icon="@drawable/ic_comment_24px"
-        android:title="Comment" />
+        android:id="@+id/menuTracking"
+        android:icon="@drawable/ic_baseline_history_24"
+        android:title="@string/label_tracking" />
 
-    <item
-        android:id="@+id/stats"
-        android:icon="@drawable/ic_data_usage_24px"
-        android:title="Stats" />
 </menu>

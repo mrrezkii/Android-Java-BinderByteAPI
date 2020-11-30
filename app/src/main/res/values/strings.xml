@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Expedition Info</string>
+    <string name="label_postage">Check Postage</string>
+    <string name="label_tracking">Tracking</string>
 </resources>
