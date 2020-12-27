@@ -50,4 +50,9 @@ dependencies {
     // Spinner
     implementation 'com.github.arcadefire:nice-spinner:1.4.4'
 
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.1.0'
+
 }
