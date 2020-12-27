@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
             android:layout_marginRight="100px"
-            android:background="@drawable/button_rounded_corner"
+            android:background="@drawable/edittext_rounded_corner"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:fontFamily="@font/nunito_bold"
@@ -70,8 +70,21 @@
                 app:backgroundSelector="@drawable/spinner_background_selector"
                 app:textTint="@color/black" />
 
-
         </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:background="@drawable/button_rounded_corner"
+            android:padding="@dimen/margin_small"
+            android:text="Continue"
+            android:textColor="@color/white" />
 
 
     </LinearLayout>
