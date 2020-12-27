@@ -73,15 +73,7 @@ public class TrackingFragment extends Fragment {
                 "ANTERAJA",
                 "WAHANA",
                 "NINJA",
-                "LION",
-                "PCP EXPRESS",
-                "JET EXPRESS",
-                "REX EXPRESS",
-                "FIRST LOGISTICS",
-                "ID EXPRESS",
-                "SHOPEE EXPRESS",
-                "KGXPRESS",
-                "SAP EXPRESS"));
+                "LION"));
         spinCourier.attachDataSource(dataset);
     }
 
@@ -126,7 +118,7 @@ public class TrackingFragment extends Fragment {
 
             @Override
             public void onFailure(Call<BinderByteResponse> call, Throwable t) {
-
+                call.clone().enqueue(this);
             }
         });
     }
@@ -149,7 +141,7 @@ public class TrackingFragment extends Fragment {
         TextView tvShipper = bottomSheetView.findViewById(R.id.tvShipper);
         TextView tvReceiver = bottomSheetView.findViewById(R.id.tvReceiver);
 
-        tvAwb.setText(strAwb);
+        tvAwb.setText("AWB : " + strAwb);
         tvCourier.setText(strCourier);
         tvService.setText(strService);
         tvDate.setText(strDate);
