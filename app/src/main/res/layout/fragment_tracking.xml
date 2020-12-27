@@ -1,13 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_rounded_corner">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Ini tracking"
-        android:textSize="20sp" />
+        android:layout_marginLeft="@dimen/margin_very_large"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Tracking"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:fontFamily="@font/nunito"
+            android:text="Place enter your AWB number"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <android.inputmethodservice.ExtractEditText
+            android:id="@+id/etAWBNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginRight="100px"
+            android:background="@drawable/button_rounded_corner"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/nunito_bold"
+            android:hint="1202190044"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:fontFamily="@font/nunito"
+                android:text="Select your courier"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <org.angmarch.views.NiceSpinner
+                android:id="@+id/spinCourier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                app:arrowTint="@color/black"
+                app:backgroundSelector="@drawable/spinner_background_selector"
+                app:textTint="@color/black" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
 </RelativeLayout>
