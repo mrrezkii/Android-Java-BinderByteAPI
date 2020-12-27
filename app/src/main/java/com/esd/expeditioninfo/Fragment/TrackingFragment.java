@@ -75,6 +75,7 @@ public class TrackingFragment extends Fragment {
                 "NINJA",
                 "LION"));
         spinCourier.attachDataSource(dataset);
+        spinCourier.getBackground().setAlpha(0);
     }
 
     void showKeyboard(Context mContext, View view) {
@@ -145,8 +146,8 @@ public class TrackingFragment extends Fragment {
         tvCourier.setText(strCourier);
         tvService.setText(strService);
         tvDate.setText(strDate);
-        tvPrice.setText(strPrice);
-        tvWeight.setText(strWeight);
+        tvPrice.setText("Rp." + strPrice);
+        tvWeight.setText(strWeight + "KG");
         tvOrigin.setText(strOrigin);
         tvDestination.setText(strDestination);
         tvShipper.setText(strShipper);

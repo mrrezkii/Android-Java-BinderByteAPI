@@ -66,9 +66,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_normal"
-                app:arrowTint="@color/black"
+                app:arrowTint="@color/white"
                 app:backgroundSelector="@drawable/spinner_background_selector"
-                app:textTint="@color/black" />
+                app:textTint="@color/white" />
 
         </LinearLayout>
 
