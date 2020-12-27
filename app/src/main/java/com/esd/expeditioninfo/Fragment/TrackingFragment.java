@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -41,6 +42,7 @@ public class TrackingFragment extends Fragment {
     NiceSpinner spinCourier;
 
     private String strAwb, strItem;
+    private String strCourier, strService, strStatus, strDate, strPrice, strWeight, strOrigin, strDestination, strShipper, strReceiver;
     private ApiService apiService;
 
     @Override
@@ -105,7 +107,17 @@ public class TrackingFragment extends Fragment {
             public void onResponse(Call<BinderByteResponse> call, Response<BinderByteResponse> response) {
                 Log.d("Data", "" + response);
                 if (response.isSuccessful()) {
-                    BottomSheetAction();
+                    strCourier = response.body().getData().getSummary().getCourier();
+                    strStatus = response.body().getData().getSummary().getStatus();
+                    strService = response.body().getData().getSummary().getService();
+                    strDate = response.body().getData().getSummary().getDate();
+                    strPrice = response.body().getData().getSummary().getAmount();
+                    strWeight = response.body().getData().getSummary().getWeight();
+                    strOrigin = response.body().getData().getDetail().getOrigin();
+                    strDestination = response.body().getData().getDetail().getDestination();
+                    strShipper = strOrigin = response.body().getData().getDetail().getShipper();
+                    strReceiver = response.body().getData().getDetail().getReceiver();
+                    BottomSheetAction(strCourier, strStatus, strService, strDate, strPrice, strWeight, strOrigin, strDestination, strShipper, strReceiver);
                 } else {
                     Toast.makeText(getActivity(), "No Result",
                             Toast.LENGTH_LONG).show();
@@ -119,12 +131,35 @@ public class TrackingFragment extends Fragment {
         });
     }
 
-    private void BottomSheetAction() {
+    private void BottomSheetAction(String strCourier, String strStatus, String strService, String strDate, String strPrice, String strWeight, String strOrigin, String strDestination, String strShipper, String strReceiver) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getActivity(), R.style.BottomSheetDialogTheme);
         View bottomSheetView = LayoutInflater.from(getActivity()).
                 inflate(
                         R.layout.bottomsheet_container, getActivity().findViewById(R.id.llBottomSheet)
                 );
+        TextView tvAwb = bottomSheetView.findViewById(R.id.tvAwb);
+        TextView tvCourier = bottomSheetView.findViewById(R.id.tvCourier);
+        View tvStatus = bottomSheetView.findViewById(R.id.vStatus);
+        TextView tvService = bottomSheetView.findViewById(R.id.tvService);
+        TextView tvDate = bottomSheetView.findViewById(R.id.tvDate);
+        TextView tvPrice = bottomSheetView.findViewById(R.id.tvPrice);
+        TextView tvWeight = bottomSheetView.findViewById(R.id.tvWeight);
+        TextView tvOrigin = bottomSheetView.findViewById(R.id.tvOrigin);
+        TextView tvDestination = bottomSheetView.findViewById(R.id.tvDestination);
+        TextView tvShipper = bottomSheetView.findViewById(R.id.tvShipper);
+        TextView tvReceiver = bottomSheetView.findViewById(R.id.tvReceiver);
+
+        tvAwb.setText(strAwb);
+        tvCourier.setText(strCourier);
+        tvService.setText(strService);
+        tvDate.setText(strDate);
+        tvPrice.setText(strPrice);
+        tvWeight.setText(strWeight);
+        tvOrigin.setText(strOrigin);
+        tvDestination.setText(strDestination);
+        tvShipper.setText(strShipper);
+        tvReceiver.setText(strReceiver);
+
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
     }
