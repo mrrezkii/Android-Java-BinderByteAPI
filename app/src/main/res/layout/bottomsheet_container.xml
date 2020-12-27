@@ -2,6 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/llBottomSheet"
+    android:background="@drawable/bottomsheet_rounded_corner"
+    android:padding="@dimen/margin_normal"
     android:orientation="vertical">
 
     <LinearLayout
@@ -26,6 +29,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/nunito_bold"
             android:text="See the history"
+            android:textAlignment="textEnd"
             android:textColor="@color/orange"
             android:textSize="16sp" />
 

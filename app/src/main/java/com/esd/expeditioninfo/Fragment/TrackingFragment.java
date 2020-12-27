@@ -11,6 +11,7 @@ import android.widget.EditText;
 import androidx.fragment.app.Fragment;
 
 import com.esd.expeditioninfo.R;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import org.angmarch.views.NiceSpinner;
 import org.angmarch.views.OnSpinnerItemSelectedListener;
@@ -21,6 +22,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class TrackingFragment extends Fragment {
 
@@ -50,7 +52,6 @@ public class TrackingFragment extends Fragment {
 
         List<String> dataset = new LinkedList<>(Arrays.asList("JNE", "JNT", "POST", "TIKI", "WAHANA"));
         spinCourier.attachDataSource(dataset);
-//        spinCourier.getBackground().setAlpha(0);
         spinCourier.setOnSpinnerItemSelectedListener(new OnSpinnerItemSelectedListener() {
             @Override
             public void onItemSelected(NiceSpinner parent, View view, int position, long id) {
@@ -64,6 +65,18 @@ public class TrackingFragment extends Fragment {
             InputMethodManager inputMethodManager = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
             inputMethodManager.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT);
         }
+    }
+
+    @OnClick(R.id.btnContinue)
+    void btnContinue(View view) {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getActivity(), R.style.BottomSheetDialogTheme);
+        View bottomSheetView = LayoutInflater.from(getActivity()).
+                inflate(
+                        R.layout.bottomsheet_container,
+                        view.findViewById(R.id.llBottomSheet)
+                );
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetDialog.show();
     }
 }
 
