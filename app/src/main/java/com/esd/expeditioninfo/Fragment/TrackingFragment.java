@@ -50,7 +50,24 @@ public class TrackingFragment extends Fragment {
             }
         });
 
-        List<String> dataset = new LinkedList<>(Arrays.asList("JNE", "JNT", "POST", "TIKI", "WAHANA"));
+        List<String> dataset = new LinkedList<>(Arrays.asList(
+                "JNE",
+                "POS",
+                "JNT",
+                "SICEPAT",
+                "TIKI",
+                "ANTERAJA",
+                "WAHANA",
+                "NINJA",
+                "LION",
+                "PCP EXPRESS",
+                "JET EXPRESS",
+                "REX EXPRESS",
+                "FIRST LOGISTICS",
+                "ID EXPRESS",
+                "SHOPEE EXPRESS",
+                "KGXPRESS",
+                "SAP EXPRESS"));
         spinCourier.attachDataSource(dataset);
         spinCourier.setOnSpinnerItemSelectedListener(new OnSpinnerItemSelectedListener() {
             @Override
